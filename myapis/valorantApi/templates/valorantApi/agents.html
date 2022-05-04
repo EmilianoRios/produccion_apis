@@ -1,0 +1,36 @@
+{% extends 'valorantApi/base.html' %} 
+
+{% load static %}
+
+{% block title %} 
+
+Agents
+
+{% endblock %} 
+
+{% block content %}
+
+<!-- Aqui deberás de hacer tu estructura HTML -->
+
+<div class="container">
+
+    <h3 class="h3 text-center p-3 text-light">Agents</h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for agent in agents%}
+        <div class="col">
+          <div class="card border-danger text-white bg-light bg-gradient h-100">
+            <img src="{{agent.fullPortraitV2}}" class="card-img-top" alt="...">
+            <h5 class="card-header text-dark">{{agent.displayName}}</h5>
+            <div class="card-body text-dark">
+              <p class="card-text">{{agent.description}}</p>
+              <p class="card-text">Role: {{agent.role.displayName}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
