@@ -1,0 +1,25 @@
+{% extends 'digimonApi/layout.html' %}
+{% block content %}
+{%for d in data%}
+
+<article>
+    <div class="container-article"> 
+        <div>
+            {% if request.user.is_authenticated %} 
+            <i class="clock"></i>
+            {%endif%}
+            <br>
+            <div class="post"><h1>{{d.name}}</h1></div>
+            <br><br>
+            <div><h2>Nivel: {{d.level}}</h2></div>
+        </div>
+    </div>
+            <img class='post_img'src="{{d.img}}">
+            <br><br><br>
+
+</article>
+
+
+{% endfor %}
+
+{% endblock %}
