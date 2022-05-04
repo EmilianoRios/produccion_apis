@@ -11,5 +11,7 @@ RECORDAR INCLUIR LAS COMILLAS DENTRO DE LA FUNCIÓN INCLUDE
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('menuApis.urls'))
+    path('',include('menuApis.urls')),
+    path('digimon/',include('digimonApi.urls')),
+    path('makeup/',include('makeupApi.urls')),
 ]
