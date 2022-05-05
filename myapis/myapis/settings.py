@@ -38,12 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'menuApis',
-<<<<<<< HEAD
     'valorantApi',
-=======
     'digimonApi',
     'makeupApi',
->>>>>>> cf384d05b47dde311423b4a20d7e840f6ee5dd3c
 ]
 
 MIDDLEWARE = [
