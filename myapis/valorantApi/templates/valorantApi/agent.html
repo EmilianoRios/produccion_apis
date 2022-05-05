@@ -1,0 +1,45 @@
+{% extends 'valorantApi/base.html' %} 
+
+{% load static %}
+
+{% block title %} 
+
+Agent
+
+{% endblock %} 
+
+{% block content %}
+
+<!-- Aqui deberás de hacer tu estructura HTML -->
+
+<h3 class="h3 text-center p-3 text-light">Agent</h3>
+
+<div class="container border rounded bg-light mb-5">
+
+    <div class="row">
+        <div class="col-md-4">
+          <div class="d-grid gap-2 col-11 mx-auto m-4">
+            <img src="{{agent.fullPortrait}}" class="img-thumbnail md-3" alt="...">
+          </div>
+        </div>
+        <div class="col-md-8 mt-3">
+          <h1 class="h1">{{agent.displayName}}</h1>
+          <h3 class="h3">About {{agent.displayName}}</h3>
+          <hr />
+          <p>{{agent.description}}</p>
+          <h3>Additional Information</h3>
+          <hr />
+          <div class="row row-cols-2">
+            {% for ability in agent.abilities%}
+            <div clas="col">
+              <span class="h5">Ability: {{ability.displayName}}</span>
+              <p>{% if not ability.displayIcon == Null%}<img src="{{ability.displayIcon}}" class="img-thumbnail bg-dark md-3" alt="...">{% else %}{% endif %}</p>
+              <p>{{ability.description}}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+</div>
+
+{% endblock %}

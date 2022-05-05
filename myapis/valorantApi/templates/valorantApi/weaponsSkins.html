@@ -4,7 +4,7 @@
 
 {% block title %} 
 
-Weapons
+{% if 'Chromas' in request.path %} Chromas {% else %} Skins {% endif%}
 
 {% endblock %} 
 

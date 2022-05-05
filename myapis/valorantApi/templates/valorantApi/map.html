@@ -1,0 +1,36 @@
+{% extends 'valorantApi/base.html' %} 
+
+{% load static %}
+
+{% block title %} 
+
+Map
+
+{% endblock %} 
+
+{% block content %}
+
+<!-- Aqui deberás de hacer tu estructura HTML -->
+
+
+<h3 class="h3 text-center p-3 text-light">Map</h3>
+
+<div class="container border rounded bg-light mb-5">
+
+    <div class="row">
+        <div class="col-md-4">
+          <div class="d-grid gap-2 col-11 mx-auto m-4">
+            <img src="{{map.splash}}" class="img-thumbnail md-3" alt="...">
+          </div>
+        </div>
+        <div class="col-md-8 mt-3">
+          <h1 class="h1">{{map.displayName}}</h1>
+          <h3>MiniMap</h3>
+          <img src="{{map.displayIcon}}" class="img-thumbnail md-3" alt=""></img>
+        </div>
+      </div>
+
+</div>
+
+
+{% endblock %}

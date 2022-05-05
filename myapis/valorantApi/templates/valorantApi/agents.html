@@ -24,7 +24,8 @@ Agents
             <h5 class="card-header text-dark">{{agent.displayName}}</h5>
             <div class="card-body text-dark">
               <p class="card-text">{{agent.description}}</p>
-              <p class="card-text">Role: {{agent.role.displayName}}</p>
+              <p class="card-text badge bg-danger">Role: {{agent.role.displayName}}</p>
+              <a href="{% url 'Agent' uuid=agent.uuid %}" class="btn stretched-link"></a>
             </div>
           </div>
         </div>
