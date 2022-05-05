@@ -183,23 +183,15 @@ img.profile{
 }
 
 img.post_img{
-  height: 500px;
-  width: 500px;
-  margin-left: 220px; 
+  height: 100%;
+  width: 60%;
+  max-width: 500px;
+  max-height: 600px;
+  margin-left: 160px; 
   margin-right: auto;
   margin-top: 40px;
   border-radius: 0%;
 }
-
-img.post_img_detail{
-  height: 500px;
-  width: 500px;
-  margin-left: 110px; 
-  margin-right: auto;
-  margin-top: 40px;
-  border-radius: 0%;
-}
-
 
 .follow-button{
   color: white;
