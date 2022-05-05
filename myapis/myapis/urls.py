@@ -17,5 +17,7 @@ urlpatterns = [
 
     path('digimon/',include('digimonApi.urls')),
     path('makeup/',include('makeupApi.urls')),
+    path('breakingbad/',include('breakingbadApi.urls')),
+    path('disney/',include('disneyApi.urls')),
 
 ]

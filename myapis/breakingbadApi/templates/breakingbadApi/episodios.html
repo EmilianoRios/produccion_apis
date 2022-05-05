@@ -1,0 +1,22 @@
+{% extends 'breakingbadApi/base.html' %}
+{% block content%} 
+<body>
+    <div class="container">
+        <ul class="list-group">
+            {%for episodio in episodios%}
+                <li class="list-group-item">
+                    <h5 class="border rounded bg-primary">Episodio {{episodio.episode}} Temporada {{episodio.season}}</h5> 
+                    <dt>Titulo</dt>
+                    <dd>{{episodio.title}}</dd>
+                    <dt>Fecha de Salida</dt>
+                    <dd>{{episodio.air_date}}</dd>
+                    <dt>Personajes</dt>
+                    <dd>{{episodio.characters}}</dd>
+                    <dt>Serie</dt>
+                    <dd>{{episodio.series}}</dd>
+                </li>
+            {%endfor%}
+        </ul>    
+    </div>  
+</body>
+{% endblock %}

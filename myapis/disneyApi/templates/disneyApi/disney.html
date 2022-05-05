@@ -1,0 +1,19 @@
+{% extends 'disneyApi/base.html' %}
+{% block content%}   
+  <body>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-5">
+        {%for personaje in personajes%}
+        <div class="card" style="width: 18rem;">
+            <img src="{{personaje.imageUrl}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Personajes: {{personaje.name}} </p>
+              <p class="card-text">Peliculas: {{personaje.films}} </p>
+              <p class="card-text">Enemigos: {{personaje.enemies}}</p>
+              <p class="card-text">Videojuegos: {{personaje.videoGames}}</p>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+    </div>
+{% endblock %}
