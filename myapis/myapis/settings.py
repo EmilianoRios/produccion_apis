@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'valorantApi',
     'digimonApi',
     'makeupApi',
+    'breakingbadApi',
+    'disneyApi',
 ]
 
 MIDDLEWARE = [
