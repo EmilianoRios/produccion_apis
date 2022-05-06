@@ -13,7 +13,7 @@ def index(request):
     URL = 'https://inshortsapi.vercel.app/news?category=all'
     data = requests.get(URL)
     data = data.json() 
-    data['categorias']={'all':'Todos', 'national':'Nacional', 'business':'Negocios', 'sports':'Deportes', 'world':'Mundo', 'politics':'Politica','technology':'Tecnologia', 'entertainment':'Entretenimiento', 'science':'Ciencia', 'automobile':'Automoviles'}
+    data['categorias']={'all':'Todos', 'national':'Nacional', 'business':'Negocios', 'sport':'Deportes', 'world':'Mundo', 'politics':'Politica','technology':'Tecnologia', 'entertainment':'Entretenimiento', 'science':'Ciencia', 'automobile':'Automoviles'}
     return render(request, 'noticias/noticias.html', {'data':data})
 
 def filtro(request, categoria):
@@ -21,7 +21,7 @@ def filtro(request, categoria):
     URL= 'https://inshortsapi.vercel.app/news?category='+categoria
     data=requests.get(URL)
     data= data.json()
-    data['categorias']={'all':'Todos', 'national':'Nacional', 'business':'Negocios', 'sports':'Deportes', 'world':'Mundo', 'politics':'Politica','technology':'Tecnologia', 'entertainment':'Entretenimiento', 'science':'Ciencia', 'automobile':'Automoviles'}
+    data['categorias']={'all':'Todos', 'national':'Nacional', 'business':'Negocios', 'sport':'Deportes', 'world':'Mundo', 'politics':'Politica','technology':'Tecnologia', 'entertainment':'Entretenimiento', 'science':'Ciencia', 'automobile':'Automoviles'}
     
     return render(request, 'noticias/filtro.html', {'data':data})
 
