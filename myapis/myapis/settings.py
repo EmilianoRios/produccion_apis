@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'makeupApi',
     'breakingbadApi',
     'disneyApi',
+    'freeToGameApi',
 ]
 
 MIDDLEWARE = [

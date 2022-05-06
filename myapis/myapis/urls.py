@@ -17,4 +17,5 @@ urlpatterns = [
     path('makeup/',include('makeupApi.urls')),
     path('breakingbad/',include('breakingbadApi.urls')),
     path('disney/',include('disneyApi.urls')),
+    path('freetogame/',include('freeToGameApi.urls')),
 ]
