@@ -1,0 +1,25 @@
+{% extends 'noticias/base.html' %}
+{% load static %}
+    {% block content %}
+         <section class="about-section">
+            <div class="row d-flex flex-row justify-content-center alig-items-center "  >
+                    
+                    <div class="col-sm-3 " >      
+                        <div class="card" style="margin-bottom: 10px;" >
+                        <img class="card-img-top" src="{{data.imageUrl}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{data.title}}</h5>
+                            <p class="card-text" maxlength="50">{{data.content}}..<a href="#">mas</a></p>
+                            <p class="card-text">Autor: {{data.author}}</p>
+                            <p class="card-text" maxlength="100"><small class="text-muted">{{data.date}}, {{data.time}}</small></p>
+                        </div>
+                        <a style="align-self: center;" href="{% url 'Inicio' %}">Volver</a>
+                        </div>
+                        
+                    </div>
+
+            </div>
+                    
+        </section>
+    {% endblock %}
+      

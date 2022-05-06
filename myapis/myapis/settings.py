@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'breakingbadApi',
     'disneyApi',
     'freeToGameApi',
+    'noticiasApi',
+    'covidApi',
 ]
 
 MIDDLEWARE = [
