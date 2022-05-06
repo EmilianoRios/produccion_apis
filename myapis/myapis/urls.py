@@ -17,4 +17,6 @@ urlpatterns = [
     path('makeup/',include('makeupApi.urls')),
     path('breakingbad/',include('breakingbadApi.urls')),
     path('disney/',include('disneyApi.urls')),
+    path('noticias/',include('noticiasApi.urls')),
+    path('covid/',include('covidApi.urls')),
 ]

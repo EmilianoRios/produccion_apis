@@ -1,0 +1,61 @@
+{% extends 'noticias/base.html' %}
+{% load static %}
+    {% block content %}
+
+        <section class="about-section" style="display:none;" id="noticia_particular">
+            <div class="row d-flex flex-row justify-content-center alig-items-center "  >
+                    
+                    <div class="col-sm-3 " >      
+                        <div class="card h-100" style="margin-bottom: 10px;" >
+                        <img class="card-img-top" src="{{data.imageUrl}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{data.title}}</h5>
+                            <p class="card-text" maxlength="50">{{data.content}}..<a href="#">mas</a></p>
+                            <p class="card-text">Autor: {{data.author}}</p>
+                            <p class="card-text" maxlength="100"><small class="text-muted">{{data.date}}, {{data.time}}</small></p>
+                        </div>
+                        <a style="align-self: center;" href="{% url 'InicioNoticias' %}">Volver</a>
+                        </div>
+                        
+                    </div>
+            </div>
+                    
+        </section>
+        <section class="about-section" id="noticias_general" >
+            <div class="dropdown" style="margin-left: 160px;">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                </a>
+                  
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% for i, j in data.categorias.items %}
+                    <li style="background-color: #7464a1"><a style="color: white;" class="dropdown-item" href="{% url 'Filtro' i %}">{{j}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="row d-flex flex-row justify-content-center alig-items-center " style="margin: 80px; margin-left: 150px;margin-right: 150px;" >
+                {% for noticia in data.data %}
+                <div class="col-sm-3 " >      
+                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
+                    <a href="{% url 'Noticia' noticia.title %} " ><img class="card-img-top" src="{{noticia.imageUrl}}" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{noticia.title}}</h5>
+                        <p class="card-text" maxlength="50">{{noticia.content}}..<a href="{% url 'Noticia' noticia.title %}">mas</a></p>
+                        <p class="card-text">Autor: {{noticia.author}}</p>
+                        <p class="card-text" maxlength="100"><small class="text-muted">{{noticia.date}}, {{noticia.time}}</small></p>
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
+             </div>
+        </section>
+    <script src="{% static 'noticias/js/scripts.js' %}"></script>
+    <script>
+        function esconder(){
+            document.getElementById('noticias_general').style.display='none';
+            document.getElementById('noticia_particular').style.display='block';
+        }
+    </script>
+
+    {% endblock %}
+      

@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'makeupApi',
     'breakingbadApi',
     'disneyApi',
+    'noticiasApi',
+    'covidApi',
 ]
 
 MIDDLEWARE = [
