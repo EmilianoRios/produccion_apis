@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'noticiasApi',
     'covidApi',
     'allauthApi',
+    'horoscopoApi',
+    'personasApi',
 ]
 
 SITE_ID = 1
@@ -152,6 +154,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "noticiasApi/static",
     BASE_DIR / "covidApi/static",
     BASE_DIR / "allauthApi/static",
+    BASE_DIR / "horoscopoApi/static",
+    BASE_DIR / "personasApi/static",
 ]
 
     # 'menuApis',

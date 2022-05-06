@@ -1,0 +1,30 @@
+{% extends 'horoscopoApi/formu.html' %}
+{% load static %}
+
+{% block title %} 
+
+    Horoscopo
+
+{% endblock %}
+
+{% block contentImg%}
+
+    {% static "" as imagenUrl %}
+    <img style ="width:200px;"src="{{imagenUrl}}{{imagen}}" alt="{{sign}}">
+
+
+{% endblock %}
+
+{% block contentText%}
+
+    <b>Signo</b>: {{sign}}<br>
+    <b>Fecha de Cumpleaños:</b> {{json.date_range}}<br>
+    <b>Dia de hoy:</b> {{json.current_date}}<br>
+    <b>Descripcion:</b> {{json.description}}<br>
+    <b>Compatibilidad:</b> {{json.compatibility}}<br>
+    <b>Humor:</b> {{json.mood}}<br>
+    <b>Color:</b> {{json.color}}<br>
+    <b>Número de la Suerte:</b> {{json.lucky_number}}<br>
+    <b>Hora de la Suerte:</b> {{json.lucky_time}}
+
+{% endblock %}

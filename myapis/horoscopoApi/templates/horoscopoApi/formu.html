@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        {% block title %} Forumulario Horoscopo {% endblock %}
+
+    </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link  href="{% static 'horoscopoApi/css/styles.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <h1 style="background-color:rgb(134, 128, 115); color:rgb(255, 255, 255); text-align:center; height: 60px;">
+            <a style="color:white; text-decoration:none;" href="{% url 'formu' %}">Horoscopo</a>
+        </h1><br>
+
+        <form action="{% url 'Home' %}">
+            <input style="color:white; border-color:white; position: absolute; top: 12px; left: 1370px;" class="btn" type="submit" value="X">
+        </form>
+
+        <div style="padding: 20px; background-color: gray;" class="container">
+
+            <div class="container">
+
+                <form class="row" action="{% url 'horoscopoApi' %}" method="get">
+                    {% csrf_token %}
+                    <div class="col">
+                        <select class="form-select" aria-label="Default select example" name="signos">
+                            <option>aries</option>
+                            <option>taurus</option>
+                            <option>gemini</option>
+                            <option>cancer</option>
+                            <option>leo</option>
+                            <option>virgo</option>
+                            <option>libra</option>
+                            <option>scorpio</option>
+                            <option>sagittarius</option>
+                            <option>capricorn</option>
+                            <option>aquarius</option>
+                            <option>pisces</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" aria-label="Default select example"  name="dia">
+                            <option>today</option>
+                            <option>tomorrow</option>
+                            <option>yesterday</option>
+                        </select>
+                    </div>
+                    <div class="col-8">
+                        <input class="btn btn-primary mb-3" type="submit" value="aceptar">
+                    </div>
+                </form><br>
+
+            </div>
+
+            <div class="row">
+
+                <div style="background-color: white;" class="col">
+                    <div class="d-flex justify-content-center">
+                        {% block contentImg%}{% endblock %}
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    {% block contentText%}{% endblock %}
+                </div>
+
+            </div>
+
+        </div>
+        
+    <footer style="background-color:gray;">
+        <hr>
+        <p style="text-align:center">Todos los derechos reservados - Lucas Riveros</p>
+    </footer>
+
+    </div>
+
+</body> 
+
+</html>

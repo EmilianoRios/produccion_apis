@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link  href="{% static 'personasApi/css/styles.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="background-color:rgb(1, 53, 131); color:rgb(255, 255, 255); text-align:left; height: 80px;">
+            <a style=" font-size:55px; margin-left:20px; color:white; text-decoration:none;" href="{% url 'personasApi' %}">Personas</a>
+        </h1><br>
+        
+        <form action="{% url 'Home' %}">
+            <input style="color:white;  border-color:white; position: absolute; top: 16px; left: 1365px;" class="btn" type="submit" value="X">
+        </form>
+
+        <div style="padding:20px; background-color: white;">
+
+            <div class="row">
+                <div style="padding:10px; border:solid 1px gray;" class="col-3">
+                    <div>
+                        <img src="{{persona.picture.large}}" alt="{{persona.name.first}}">
+                    </div>
+            
+                    <br>
+            
+                    <li>genero: {{persona.gender}}</li>
+                    <li>nombre {{persona.name.first}}</li>
+                    <li>apellido: {{persona.name.last}}</li>
+                    <li>email: {{persona.email}}</li>
+                    <li>teléfono: {{persona.phone}}</li>    
+    
+                    <br>
+
+                    <form action="{% url 'personasApi' %}">
+                        <input type="submit" value="Generar Persona Nueva">
+                    </form>
+
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div style="padding:10px; position: relative; bottom:347px; right: 50px; border:solid 1px gray;" class="col-8">
+                        <img src="{{persona2.picture.thumbnail}}" alt="{{persona2.name.first}}">
+                        {{persona2.name.first}}{{" "}}{{persona2.name.last}}<br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quod!
+                        <br>
+                        <br>
+                        <img src="{{persona2.picture.thumbnail}}" alt="{{persona2.name.first}}">
+                        {{persona2.name.first}}{{" "}}{{persona2.name.last}}<br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis rerum perferendis enim reprehenderit sequi quam ullam eos porro et.
+                        <br>
+                        <br>
+                        <img src="{{persona2.picture.thumbnail}}" alt="{{persona2.name.first}}">
+                        {{persona2.name.first}}{{" "}}{{persona2.name.last}}<br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptas facilis nam et eaque sit repellendus libero culpa obcaecati in omnis, accusamus tenetur odit at asperiores minima ea expedita commodi quod velit. Accusamus voluptatibus possimus iusto! Alias voluptatum fugiat facere accusamus iusto cupiditate ad? Id mollitia sunt consequuntur amet fuga. 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        
+        <div>
+            <footer style="background-color: white;">
+                <p style="text-align:center">Todos los derechos reservados - Lucas Riveros</p>
+            </footer>
+        </div>
+        
+    </div>
+
+</body> 
+
+</html>
