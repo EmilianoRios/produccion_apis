@@ -169,13 +169,16 @@ INSTALLED_APPS = [
 
 8. EJECUTAR SERVIDOR Y TESTEAR
 
-1. Testear la API:
-    -> py manage.py runserver
-    # Si la API funciona perfectamente realizar el push, si no, resolver los problemas y luego pushear.
+    1. Testear la API:
+        -> py manage.py runserver
+        # Si la API funciona perfectamente realizar el push, si no, resolver los problemas y luego pushear.
 
-2. Realizar el push.
-    #Primero nos fijaremos si estamos en la ruta de nuestro repositorio en nuestro terminal "Documents\GitHub\produccion_apis\" recordar no estar dentro de "myapis". Luego de verificarlo realizaremos los siguientes comandos en el terminal.
-    -> git status -s 
-    -> git add .
-    -> git commit -m 'PrimerCommit'
-    -> git push origin main
+    2. Realizar el push.
+        #Primero nos fijaremos si estamos en la ruta de nuestro repositorio en nuestro terminal "Documents\GitHub\produccion_apis\" recordar no estar dentro de "myapis". Luego de verificarlo realizaremos los siguientes comandos en el terminal.
+        -> git status -s 
+        -> git add .
+        -> git commit -m 'PrimerCommit'
+        -> git push origin main
+
+9. INSTALAR REQUERIMIENTOS DEL ENTORNO VIRTUAL
+    pip install -r requirements.txt

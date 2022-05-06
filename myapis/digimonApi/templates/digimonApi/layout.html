@@ -21,7 +21,7 @@
 	-------------------------------------->
 	<div class="main">
         <nav class="second-nav">
-            <a class="feed" href="{% url 'index' %}">Inicio</a>
+            <a class="feed" href="{% url 'indexDigimon' %}">Inicio</a>
 			<form class="d-flex pt-4" method='POST' action="{% url 'search' %}">
 				{% csrf_token %}
 				<input class="" type="search" placeholder="Buscar" name='Search' aria-label="Search">
