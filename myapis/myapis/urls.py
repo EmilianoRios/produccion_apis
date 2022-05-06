@@ -20,4 +20,6 @@ urlpatterns = [
     path('freetogame/',include('freeToGameApi.urls')),
     path('noticias/',include('noticiasApi.urls')),
     path('covid/',include('covidApi.urls')),
+    path('allauth/',include('allauthApi.urls')),
+    path('accounts/', include('allauth.urls')),
 ]

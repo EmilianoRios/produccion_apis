@@ -3,8 +3,8 @@
     overflow-y: auto;
 }
 
-/* footer {
+#sticky-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-} */
+}

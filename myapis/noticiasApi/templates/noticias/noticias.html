@@ -1,10 +1,8 @@
 {% extends 'noticias/base.html' %}
 {% load static %}
     {% block content %}
-
         <section class="about-section" style="display:none;" id="noticia_particular">
             <div class="row d-flex flex-row justify-content-center alig-items-center "  >
-                    
                     <div class="col-sm-3 " >      
                         <div class="card h-100" style="margin-bottom: 10px;" >
                         <img class="card-img-top" src="{{data.imageUrl}}" alt="Card image cap">
@@ -16,17 +14,14 @@
                         </div>
                         <a style="align-self: center;" href="{% url 'InicioNoticias' %}">Volver</a>
                         </div>
-                        
                     </div>
-            </div>
-                    
+            </div> 
         </section>
         <section class="about-section" id="noticias_general" >
             <div class="dropdown" style="margin-left: 160px;">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     Categorias
                 </a>
-                  
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {% for i, j in data.categorias.items %}
                     <li style="background-color: #7464a1"><a style="color: white;" class="dropdown-item" href="{% url 'Filtro' i %}">{{j}}</a></li>
@@ -56,6 +51,5 @@
             document.getElementById('noticia_particular').style.display='block';
         }
     </script>
-
     {% endblock %}
       

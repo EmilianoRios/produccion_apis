@@ -11,6 +11,10 @@
     <title>Menu API'S</title>
   </head>
   <body>
+    {% if user.is_authenticated %}
+    <p class="bg-primary text-white text-center">Logueado como: {{user.username}}</p>
+    {% endif %}
+
     <div class="container">
 
         <div>
@@ -33,12 +37,26 @@
               </div>
               <p class="mb-1">Api con datos sobre maquillaje, incluyendo sus tipos <br>y componentes</p>
             </a>
+            <a href="allauth/" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Allauth Api</h5>
+                <small class="text-muted">Emiliano Luis Rios, Lautaro Nicolás Avila</small>
+              </div>
+              <p class="mb-1">Api que permite iniciar sesión con autentificación <br> por Google</p>
+            </a>
             <a href="valorant/" class="list-group-item list-group-item-action">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Valorant Api</h5>
                 <small class="text-muted">Emiliano Luis Rios</small>
               </div>
               <p class="mb-1">Api que devuelve datos relacionados con el videojuego<br> Valorant</p>
+            </a>
+            <a href="/freetogame/games/all/" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">FreeToGame Api</h5>
+                <small class="text-muted">Emiliano Luis Rios</small>
+              </div>
+              <p class="mb-1">Api que permite ver juegos gratis <br> por FreeToGame</p>
             </a>
             <a href="breakingbad/" class="list-group-item list-group-item-action">
               <div class="d-flex w-100 justify-content-between">

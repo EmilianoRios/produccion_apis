@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'menuApis',
     'valorantApi',
     'digimonApi',
@@ -46,7 +51,10 @@ INSTALLED_APPS = [
     'freeToGameApi',
     'noticiasApi',
     'covidApi',
+    'allauthApi',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,6 +97,13 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -126,7 +141,34 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "menuApis/static",
+    BASE_DIR / "valorantApi/static",
+    BASE_DIR / "digimonApi/static",
+    BASE_DIR / "makeupApi/static",
+    BASE_DIR / "breakingbadApi/static",
+    BASE_DIR / "disneyApi/static",
+    BASE_DIR / "freeToGameApi/static",
+    BASE_DIR / "noticiasApi/static",
+    BASE_DIR / "covidApi/static",
+    BASE_DIR / "allauthApi/static",
+]
+
+    # 'menuApis',
+    # 'valorantApi',
+    # 'digimonApi',
+    # 'makeupApi',
+    # 'breakingbadApi',
+    # 'disneyApi',
+    # 'freeToGameApi',
+    # 'noticiasApi',
+    # 'covidApi',
+    # 'allauthApi',
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/allauth'

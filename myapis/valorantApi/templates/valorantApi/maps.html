@@ -1,36 +1,28 @@
-{% extends 'valorantApi/base.html' %} 
-
-{% load static %}
-
-{% block title %} 
-
-Maps
-
-{% endblock %} 
-
-{% block content %}
+{% extends 'valorantApi/base.html' %} {% load static %} {% block title %} Maps
+{% endblock %} {% block content %}
 
 <!-- Aqui deberás de hacer tu estructura HTML -->
 
 <div class="container">
+  <h3 class="h3 text-center p-3 text-light">Maps</h3>
 
-    <h3 class="h3 text-center p-3 text-light">Maps</h3>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for map in maps%}
-        <div class="col">
-          <div class="card border-danger text-white bg-light bg-gradient h-100">
-            <img src="{{map.splash}}" class="card-img-top" alt="...">
-            <h5 class="card-header text-dark">{{map.displayName}}</h5>
-            <div class="card-body text-dark">
-              <p class="card-text">Coordinates: {{map.coordinates}}</p>
-              <a href="{% url 'Map' uuid=map.uuid %}" class="btn stretched-link"></a>
-            </div>
-          </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for map in maps%}
+    <div class="col">
+      <div class="card border-danger text-white bg-light bg-gradient h-100">
+        <img src="{{map.splash}}" class="card-img-top" alt="..." />
+        <h5 class="card-header text-dark">{{map.displayName}}</h5>
+        <div class="card-body text-dark">
+          <p class="card-text">Coordinates: {{map.coordinates}}</p>
+          <a
+            href="{% url 'Map' uuid=map.uuid %}"
+            class="btn stretched-link"
+          ></a>
         </div>
-        {% endfor %}
+      </div>
     </div>
-
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}
